@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Pedro/AndroidStudioProjects/ReportCampus/app/src/main/res/layout/activity_main.xml" value="0.29257246376811596" />
+        <entry key="..\:/Users/eduar/.android/Report-Campus/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
+        <entry key="..\:/Users/eduar/.android/Report-Campus/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/eduar/.android/Report-Campus/app/src/main/res/layout/login.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/eduar/.android/Report-Campus/app/src/main/res/layout/telaInicio.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/eduar/.android/Report-Campus/app/src/main/res/layout/telainicio.xml" value="0.22" />
+        <entry key="..\:/Users/eduar/.android/Report-Campus/app/src/main/res/layout/telalogin.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -12,5 +18,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
