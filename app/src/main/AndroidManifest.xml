@@ -14,17 +14,17 @@
         android:theme="@style/Theme.ReportCampus"
         tools:targetApi="31">
         <activity
-            android:name=".ConfigdadosActivity"
-            android:exported="false" />
+            android:name=".EditCadastroActivity"
+            android:exported="true"/>
         <activity
             android:name=".ConfigsupActivity"
-            android:exported="false" />
+            android:exported="true"/>
         <activity
             android:name=".ConfiguracoesActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ReportesActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SobreActivity"
             android:exported="true" />

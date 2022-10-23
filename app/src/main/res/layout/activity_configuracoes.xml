@@ -7,9 +7,10 @@
     tools:context=".ConfiguracoesActivity">
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/imageFundo5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -18,152 +19,189 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fundo" />
 
-    <ImageButton
-        android:id="@+id/imageButton14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936"
-        app:srcCompat="@drawable/iconehome" />
-
-    <ImageButton
-        android:id="@+id/imageButton15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView16"
-        app:layout_constraintHorizontal_bias="0.359"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941"
-        app:srcCompat="@drawable/iconelist" />
-
-    <ImageButton
-        android:id="@+id/imageButton16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941"
-        app:srcCompat="@drawable/iconeconfiguracao" />
-
-    <ImageButton
-        android:id="@+id/imageButton17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941"
-        app:srcCompat="@drawable/iconesair" />
-
     <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton16"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toEndOf="@+id/imageButton15"
-        app:layout_constraintTop_toTopOf="@+id/imageButton16"
-        app:layout_constraintVertical_bias="0.682"
-        app:srcCompat="@drawable/linha" />
-
-    <ImageButton
-        android:id="@+id/imageButton18"
+        android:id="@+id/imageLogo3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77"
-        app:srcCompat="@drawable/voltar" />
-
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fundoapagado" />
 
     <ImageButton
-        android:id="@+id/imageButton19"
+        android:id="@+id/btEditCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintStart_toStartOf="@+id/imageView18"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="@+id/imageLogo3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309"
+        app:layout_constraintVertical_bias="0.195"
         app:srcCompat="@drawable/retangulopequeno" />
 
     <ImageButton
-        android:id="@+id/imageButton20"
+        android:id="@+id/btSuporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+        app:layout_constraintBottom_toTopOf="@+id/btSobreNos"
+        app:layout_constraintEnd_toEndOf="@+id/imageLogo3"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="@+id/imageLogo3"
+        app:layout_constraintTop_toBottomOf="@+id/btEditCadastro"
+        app:layout_constraintVertical_bias="0.361"
+        app:srcCompat="@drawable/retangulopequeno" />
+
+    <ImageButton
+        android:id="@+id/btSobreNos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
-        app:layout_constraintStart_toStartOf="@+id/imageView18"
-        app:layout_constraintTop_toTopOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/retangulopequeno" />
-
-    <ImageButton
-        android:id="@+id/imageButton21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
-        app:layout_constraintEnd_toEndOf="@+id/imageView18"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintStart_toStartOf="@+id/imageView18"
-        app:layout_constraintTop_toTopOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.465"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="@+id/imageLogo3"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo5"
+        app:layout_constraintVertical_bias="0.338"
         app:srcCompat="@drawable/retangulopequeno" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/imageEditCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+        app:layout_constraintBottom_toTopOf="@+id/btSuporte"
+        app:layout_constraintEnd_toEndOf="@+id/btEditCadastro"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="@+id/btEditCadastro"
+        app:layout_constraintTop_toTopOf="@+id/btEditCadastro"
+        app:layout_constraintVertical_bias="0.482"
+        app:srcCompat="@drawable/editardados" />
+
+    <ImageView
+        android:id="@+id/imageSuporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/btSuporte"
+        app:layout_constraintEnd_toEndOf="@+id/btSuporte"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="@+id/btSuporte"
+        app:layout_constraintTop_toTopOf="@+id/btSuporte"
+        app:layout_constraintVertical_bias="0.541"
+        app:srcCompat="@drawable/suporte" />
+
+    <ImageView
+        android:id="@+id/imageSobreNos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/btSobreNos"
+        app:layout_constraintEnd_toEndOf="@+id/btSobreNos"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="@+id/btSobreNos"
+        app:layout_constraintTop_toTopOf="@+id/btSobreNos"
+        app:layout_constraintVertical_bias="0.444"
+        app:srcCompat="@drawable/sobren" />
+
+    <ImageButton
+        android:id="@+id/btHome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="208dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145"
+        app:layout_constraintVertical_bias="0.966"
+        app:srcCompat="@drawable/iconehome" />
+
+    <ImageButton
+        android:id="@+id/btLista1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageFundo5"
+        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967"
+        app:srcCompat="@drawable/iconelist" />
+
+    <ImageButton
+        android:id="@+id/btConfig1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967"
+        app:srcCompat="@drawable/iconeconfiguracao" />
+
+    <ImageButton
+        android:id="@+id/btSair1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967"
+        app:srcCompat="@drawable/iconesair" />
+
+    <ImageButton
+        android:id="@+id/btVoltar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
+        app:layout_constraintEnd_toEndOf="@+id/imageFundo5"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo5"
+        app:layout_constraintVertical_bias="0.817"
+        app:srcCompat="@drawable/voltar" />
+
+    <ImageView
+        android:id="@+id/imageLinha1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
+        app:layout_constraintEnd_toEndOf="@+id/btConfig1"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/btLista1"
+        app:layout_constraintTop_toTopOf="@+id/btConfig1"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/linha" />
+
+    <ImageView
+        android:id="@+id/imageConfiguracao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.095"
         app:srcCompat="@drawable/config" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/imageConfig1"
         android:layout_width="50dp"
         android:layout_height="37dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-        app:layout_constraintEnd_toEndOf="@+id/imageView16"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.082"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
+        app:layout_constraintEnd_toEndOf="@+id/imageFundo5"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo5"
+        app:layout_constraintVertical_bias="0.095"
         app:srcCompat="@drawable/iconeconfiguracao" />
 
     <ImageView
-        android:id="@+id/imageView21"
+        android:id="@+id/imageVersao"
         android:layout_width="86dp"
         android:layout_height="21dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -174,38 +212,4 @@
         app:layout_constraintVertical_bias="0.829"
         app:srcCompat="@drawable/versao" />
 
-    <ImageView
-        android:id="@+id/imageView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton20"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton20"
-        app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="@+id/imageButton20"
-        app:layout_constraintTop_toTopOf="@+id/imageButton20"
-        app:layout_constraintVertical_bias="0.444"
-        app:srcCompat="@drawable/sobren" />
-
-    <ImageView
-        android:id="@+id/imageView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton19"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton19"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="@+id/imageButton19"
-        app:layout_constraintTop_toTopOf="@+id/imageButton19"
-        app:srcCompat="@drawable/editardados" />
-
-    <ImageView
-        android:id="@+id/imageView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton21"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton21"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="@+id/imageButton21"
-        app:layout_constraintTop_toTopOf="@+id/imageButton21"
-        app:layout_constraintVertical_bias="0.541"
-        app:srcCompat="@drawable/suporte" />
 </androidx.constraintlayout.widget.ConstraintLayout>
