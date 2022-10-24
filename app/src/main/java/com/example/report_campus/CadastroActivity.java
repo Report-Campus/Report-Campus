@@ -20,7 +20,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     private EditText edt_Nome, edt_Email, edt_Senha, edt_NomeFaculdade, edt_ConfirmarSenha;
     private ImageButton bt_Cadastrar;
-    String[] mensagens = {"Preencha todos os campos", "Cadastro realizado com sucesso", "A senha e a confirmação da senha estão diferentes", "Erro no cadastro"};
+    String[] mensagens = {"Preencha todos os campos", "Cadastro realizado com sucesso", "As senhas não coincidem", "Erro no cadastro"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
