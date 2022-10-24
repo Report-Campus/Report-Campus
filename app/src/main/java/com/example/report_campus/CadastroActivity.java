@@ -50,16 +50,13 @@ public class CadastroActivity extends AppCompatActivity {
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                 } else {
-                    cadastrarUsuario(v);
+                    cadastrarUsuario(v, email, senha);
                 }
             }
         });
     }
 
-    private void cadastrarUsuario(View v){
-
-        String email = edt_Email.getText().toString();
-        String senha = edt_Senha.getText().toString();
+    private void cadastrarUsuario(View v, String email, String senha){
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
