@@ -20,7 +20,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     private EditText edt_Nome, edt_Email, edt_Senha, edt_NomeFaculdade, edt_ConfirmarSenha;
     private ImageButton bt_Cadastrar;
-    String[] mensagens = {"Preencha todos os campos", "Cadastro realizado com sucesso", "As senhas não coincidem", "Erro no cadastro"};
+    String[] mensagens = {"Preencha todos os campos", "As senhas não coincidem"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,8 @@ public class CadastroActivity extends AppCompatActivity {
                 String senha = edt_Senha.getText().toString();
                 String confirmarSenha = edt_ConfirmarSenha.getText().toString();
 
+                ConnectionDB conexao = new ConnectionDB();
+
                 if(nome.isEmpty() || email.isEmpty() || faculdade.isEmpty() || senha.isEmpty() || confirmarSenha.isEmpty()){
                     Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
@@ -50,27 +52,7 @@ public class CadastroActivity extends AppCompatActivity {
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                 } else {
-                    cadastrarUsuario(v, email, senha);
-                }
-            }
-        });
-    }
-
-    private void cadastrarUsuario(View v, String email, String senha){
-
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    Snackbar snackbar = Snackbar.make(v, mensagens[1], Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
-                } else {
-                    Snackbar snackbar = Snackbar.make(v, mensagens[3], Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    conexao.cadastrarUsuario(v, email, senha);
                 }
             }
         });
