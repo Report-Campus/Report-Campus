@@ -121,6 +121,7 @@
         android:layout_width="284dp"
         android:layout_height="43dp"
         android:backgroundTint="@android:color/transparent"
+        android:cursorVisible="false"
         android:ems="10"
         android:inputType="textPersonName"
         android:lineSpacingExtra="8sp"
