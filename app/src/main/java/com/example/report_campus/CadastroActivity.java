@@ -61,8 +61,7 @@ public class CadastroActivity extends AppCompatActivity {
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                 } else {
-                    conexao.cadastrarUsuario(v, email, senha);
-                    salvarDadosUsuario(nome, faculdade);
+                    conexao.cadastrarUsuario(v, email, senha, nome, faculdade, usuarioID);
                 }
             }
         });
@@ -77,27 +76,6 @@ public class CadastroActivity extends AppCompatActivity {
         bt_Cadastrar = findViewById(R.id.btCadastrar);
     }
 
-    public void salvarDadosUsuario(String nome, String faculdade){
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> usuarios = new HashMap<>();
-        usuarios.put("nome", nome);
-        usuarios.put("faculdade", faculdade);
-
-        usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-        DocumentReference documentReference = db.collection("Usuário").document(usuarioID);
-        documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Log.d("db", "Sucesso ao salvar os dados");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("db_error", "Erro ao salvar os dados" + e.toString());
-            }
-        });
-    }
 
 }

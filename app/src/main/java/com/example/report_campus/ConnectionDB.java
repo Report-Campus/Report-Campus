@@ -25,14 +25,16 @@ import java.util.Map;
 
 public class ConnectionDB {
 
-    String usuarioID;
 
-    public void cadastrarUsuario(View v, String email, String senha){
+    public void cadastrarUsuario(View v, String email, String senha, String nome, String faculdade, String usuarioID){
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+
+                    salvarDadosUsuario(usuarioID, nome, faculdade);
+
                     Snackbar snackbar = Snackbar.make(v, "Cadastro realizado com sucesso", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
@@ -60,7 +62,28 @@ public class ConnectionDB {
         });
     }
 
+    public void salvarDadosUsuario(String usuarioID, String nome, String faculdade){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        Map<String, Object> usuarios = new HashMap<>();
+        usuarios.put("nome", nome);
+        usuarios.put("faculdade", faculdade);
+
+        usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DocumentReference documentReference = db.collection("Usuário").document(usuarioID);
+        documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Log.d("db", "Sucesso ao salvar os dados");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("db_error", "Erro ao salvar os dados" + e.toString());
+            }
+        });
+    }
 
 }
 
