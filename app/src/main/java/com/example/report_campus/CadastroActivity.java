@@ -3,6 +3,7 @@ package com.example.report_campus;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     private EditText edt_Nome, edt_Email, edt_Senha, edt_NomeFaculdade, edt_ConfirmarSenha;
     private ImageButton bt_Cadastrar;
-    String[] mensagens = {"Preencha todos os campos", "As senhas não coincidem"};
+    private String[] mensagens = {"Preencha todos os campos", "As senhas não coincidem"};
     String usuarioID;
 
     @Override
@@ -55,13 +56,14 @@ public class CadastroActivity extends AppCompatActivity {
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
-                } else if (!confirmarSenha.equals(senha) && !senha.equals(confirmarSenha)){
-                    Snackbar snackbar = Snackbar.make(v, mensagens[2], Snackbar.LENGTH_SHORT);
+                } else if (!confirmarSenha.equals(senha)){
+                    Snackbar snackbar = Snackbar.make(v, mensagens[1], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                 } else {
                     conexao.cadastrarUsuario(v, email, senha, nome, faculdade, usuarioID);
+                    telaLogin();
                 }
             }
         });
@@ -74,6 +76,12 @@ public class CadastroActivity extends AppCompatActivity {
         edt_ConfirmarSenha = findViewById(R.id.edtConfirmarSenha);
         edt_NomeFaculdade = findViewById(R.id.edtNomeFaculdade);
         bt_Cadastrar = findViewById(R.id.btCadastrar);
+    }
+
+    private void telaLogin(){
+        Intent intent = new Intent(CadastroActivity.this,LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 

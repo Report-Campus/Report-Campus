@@ -45,74 +45,61 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edtSenha2"
-        android:layout_width="284dp"
-        android:layout_height="43dp"
-        android:backgroundTint="@android:color/transparent"
-        android:cursorVisible="false"
+        android:id="@+id/edtEmail2"
+        android:layout_width="270dp"
+        android:layout_height="23dp"
+        android:background="@drawable/container"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:inputType="textPersonName"
         android:lineSpacingExtra="8sp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        android:typeface="normal"
+        android:visibility="visible"
+        app:guidelineUseRtl="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo3"
+        app:layout_constraintVertical_bias="0.61"
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/edtSenha2"
+        android:layout_width="270dp"
+        android:layout_height="23dp"
+        android:background="@drawable/container"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
         android:password="true"
         android:selectAllOnFocus="false"
         android:singleLine="false"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="16sp"
-        android:visibility="visible"
-        app:guidelineUseRtl="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/containerSenha2"
-        android:layout_width="323dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699"
-        app:srcCompat="@drawable/container"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/containerEmail2"
-        android:layout_width="323dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606"
-        app:srcCompat="@drawable/container"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/edtEmail2"
-        android:layout_width="284dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="268dp"
-        android:backgroundTint="@android:color/transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:lineSpacingExtra="8sp"
-        android:selectAllOnFocus="false"
-        android:singleLine="false"
-        android:textSize="16sp"
+        android:typeface="normal"
         android:visibility="visible"
         app:guidelineUseRtl="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo"
-        app:layout_constraintVertical_bias="0.53"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo3"
+        app:layout_constraintVertical_bias="0.703"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
 
@@ -122,15 +109,15 @@
         android:layout_height="239dp"
         android:layout_marginTop="156dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageCadastro"
+        app:layout_constraintBottom_toTopOf="@+id/imgbCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
 
-    <ImageButton
-        android:id="@+id/imageButton6"
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imgbLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/imageFundo3"
@@ -138,28 +125,28 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/imageFundo3"
         app:layout_constraintTop_toBottomOf="@+id/edtSenha2"
-        app:layout_constraintVertical_bias="0.088"
+        app:layout_constraintVertical_bias="0.317"
         app:srcCompat="@drawable/botao" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="70dp"
         android:layout_height="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton6"
-        app:layout_constraintStart_toStartOf="@+id/imageButton6"
-        app:layout_constraintTop_toTopOf="@+id/imageButton6"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbLogin"
+        app:layout_constraintEnd_toEndOf="@+id/imgbLogin"
+        app:layout_constraintStart_toStartOf="@+id/imgbLogin"
+        app:layout_constraintTop_toTopOf="@+id/imgbLogin"
         app:srcCompat="@drawable/login" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imgbCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/imageFundo3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageFundo3"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenha2"
-        app:layout_constraintVertical_bias="0.436"
+        app:layout_constraintTop_toBottomOf="@+id/imgbLogin"
+        app:layout_constraintVertical_bias="0.345"
         app:srcCompat="@drawable/cadastre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
