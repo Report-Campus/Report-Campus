@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Report-Campus</string>
+    <string-array name="Categorias">
+        <item>Reclamacoes em Geral</item>
+        <item>Avisos</item>
+        <item>Infraestrutura</item>
+
+    </string-array>
 </resources>
