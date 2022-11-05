@@ -15,7 +15,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -89,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void telaCarregamneto(){
-            Intent intent = new Intent(LoginActivity.this,InicioActivity.class);
+            Intent intent = new Intent(LoginActivity.this, CarregamentoActivity.class);
             startActivity(intent);
             finish();
     }

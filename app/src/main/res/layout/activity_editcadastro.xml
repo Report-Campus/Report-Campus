@@ -302,6 +302,7 @@
         android:id="@+id/btConfig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="false"
         app:layout_constraintBottom_toBottomOf="@+id/imageFundo1"
         app:layout_constraintEnd_toEndOf="@+id/imageFundo1"
         app:layout_constraintHorizontal_bias="0.647"

@@ -132,6 +132,7 @@
         android:id="@+id/btConfig1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="false"
         app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.647"
@@ -151,18 +152,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.967"
         app:srcCompat="@drawable/iconesair" />
-
-    <ImageButton
-        android:id="@+id/btVoltar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageFundo5"
-        app:layout_constraintEnd_toEndOf="@+id/imageFundo5"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toStartOf="@+id/imageFundo5"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo5"
-        app:layout_constraintVertical_bias="0.817"
-        app:srcCompat="@drawable/voltar" />
 
     <ImageView
         android:id="@+id/imageLinha1"

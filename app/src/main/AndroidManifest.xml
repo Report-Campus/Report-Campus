@@ -13,8 +13,8 @@
         android:theme="@style/Theme.ReportCampus"
         tools:targetApi="31">
         <activity
-            android:name=".principalActivity"
-            android:exported="false">
+            android:name=".PrincipalActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -23,7 +23,7 @@
             android:name=".EditCadastroActivity"
             android:exported="true" />
         <activity
-            android:name=".ConfigsupActivity"
+            android:name=".SuporteActivity"
             android:exported="true" />
         <activity
             android:name=".ConfiguracoesActivity"
@@ -38,7 +38,7 @@
             android:name=".CadastroActivity"
             android:exported="true" />
         <activity
-            android:name=".InicioActivity"
+            android:name=".CarregamentoActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"

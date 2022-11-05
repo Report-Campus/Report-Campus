@@ -5,145 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D5D6D6"
-    tools:context=".principalActivity">
+    tools:context=".PrincipalActivity">
 
-    <ImageButton
+    <ImageView
+        android:id="@+id/imgFundo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fundo" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036"
+        app:srcCompat="@drawable/logo" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btSair3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="@+id/imageFundo4"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo4"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.967"
         app:srcCompat="@drawable/iconesair" />
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btConfig3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963"
+        app:layout_constraintVertical_bias="0.967"
         app:srcCompat="@drawable/iconeconfiguracao" />
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btHome3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="208dp"
+        android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963"
+        app:layout_constraintVertical_bias="0.966"
         app:srcCompat="@drawable/iconehome" />
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btLista3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.332"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963"
+        app:layout_constraintVertical_bias="0.967"
         app:srcCompat="@drawable/iconelist" />
 
     <ImageView
         android:id="@+id/imageConfig2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btHome3"
-        app:layout_constraintHorizontal_bias="0.67"
-        app:layout_constraintStart_toEndOf="@+id/btLista2"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/btHome3"
         app:layout_constraintTop_toTopOf="@+id/btHome3"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/linha" />
 
-    <ImageView
-        android:id="@+id/imageLogo4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageFundo4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028"
-        app:srcCompat="@drawable/fundoapagado" />
-
-    <Spinner
-        android:id="@+id/spinner1p"
-        android:layout_width="311dp"
-        android:layout_height="47dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="8dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="240dp">
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/text_box"
-        android:layout_width="314dp"
-        android:layout_height="179dp"
-        android:layout_marginBottom="8dp"
-        android:autoText="false"
-        android:cursorVisible="false"
-        android:hint="Escreva sua mensagem aqui"
-        android:inputType="textMultiLine"
-        android:lineSpacingExtra="8sp"
-        android:outlineProvider="none"
-        android:shadowColor="#D2000000"
-        android:singleLine="false"
-        android:textAlignment="viewStart"
-        android:textSize="14sp"
-        app:guidelineUseRtl="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
-
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/send_button"
         android:layout_width="110dp"
         android:layout_height="39dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageLogo4"
-        app:layout_constraintVertical_bias="0.757"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76"
         app:srcCompat="@drawable/botao" />
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/cancel_button"
         android:layout_width="110dp"
         android:layout_height="39dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.76"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.76"
@@ -154,52 +122,41 @@
         android:id="@+id/imageView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/cancelar"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="537dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/cancel_button"
+        app:layout_constraintEnd_toEndOf="@+id/cancel_button"
+        app:layout_constraintStart_toStartOf="@+id/cancel_button"
+        app:layout_constraintTop_toTopOf="@+id/cancel_button"
+        app:srcCompat="@drawable/cancelar" />
 
     <ImageView
         android:id="@+id/imageView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/enviar"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="537dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/send_button"
+        app:layout_constraintEnd_toEndOf="@+id/send_button"
+        app:layout_constraintStart_toStartOf="@+id/send_button"
+        app:layout_constraintTop_toTopOf="@+id/send_button"
+        app:srcCompat="@drawable/enviar" />
 
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/edtCaixaTexto"
+        android:layout_width="314dp"
+        android:layout_height="179dp"
+        android:background="@drawable/conteiner_grande"
+        android:ems="10"
+        android:hint="Escreva o seu reporte"
+        android:inputType="textPersonName"
+        android:paddingLeft="6dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="6dp"
+        android:paddingRight="6dp"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664"
-        app:srcCompat="@drawable/adicionar_anexo" />
-
-    <ImageButton
-        android:id="@+id/imageButton18"
-        android:layout_width="37dp"
-        android:layout_height="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671"
-        app:srcCompat="@drawable/rectangle_32" />
-
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251"
-        app:srcCompat="@drawable/escolha_uma_categoria" />
+        app:layout_constraintVertical_bias="0.552" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
