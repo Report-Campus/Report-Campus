@@ -93,7 +93,7 @@
         app:srcCompat="@drawable/linha" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/send_button"
+        android:id="@+id/bt_enviar"
         android:layout_width="110dp"
         android:layout_height="39dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -132,25 +132,27 @@
         android:id="@+id/imageView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/send_button"
-        app:layout_constraintEnd_toEndOf="@+id/send_button"
-        app:layout_constraintStart_toStartOf="@+id/send_button"
-        app:layout_constraintTop_toTopOf="@+id/send_button"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_enviar"
+        app:layout_constraintEnd_toEndOf="@+id/bt_enviar"
+        app:layout_constraintStart_toStartOf="@+id/bt_enviar"
+        app:layout_constraintTop_toTopOf="@+id/bt_enviar"
         app:srcCompat="@drawable/enviar" />
 
     <EditText
-        android:id="@+id/edtCaixaTexto"
+        android:id="@+id/edtReporte"
         android:layout_width="314dp"
         android:layout_height="179dp"
         android:background="@drawable/conteiner_grande"
         android:ems="10"
         android:hint="Escreva o seu reporte"
-        android:inputType="textPersonName"
+        android:gravity="clip_horizontal"
+        android:inputType="textMultiLine"
+        android:maxLength="342"
+        android:maxLines="9"
         android:paddingLeft="6dp"
         android:paddingTop="6dp"
         android:paddingEnd="6dp"
         android:paddingRight="6dp"
-        android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

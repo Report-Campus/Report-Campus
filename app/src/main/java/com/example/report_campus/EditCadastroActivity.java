@@ -1,15 +1,27 @@
 package com.example.report_campus;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class EditCadastroActivity extends AppCompatActivity {
 
+    private EditText edt_nome, edt_email, edt_faculdade;
     private ImageButton bt_home, bt_lista, bt_voltar, bt_sair;
+    private FirebaseFirestore conexao = FirebaseFirestore.getInstance();
+    private String usuarioID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +54,35 @@ public class EditCadastroActivity extends AppCompatActivity {
                 finish();
             }
         });
+        bt_sair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(EditCadastroActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
+        usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference document = conexao.collection("Usuário").document(usuarioID);
+        document.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (value != null){
+                    edt_nome.setText(value.getString("nome"));
+                    edt_faculdade.setText(value.getString("faculdade"));
+                    edt_email.setText(email);
+                }
+            }
+        });
     }
 
     private void iniciarComponentes(){
@@ -49,5 +90,8 @@ public class EditCadastroActivity extends AppCompatActivity {
         bt_lista = findViewById(R.id.btLista);
         bt_voltar = findViewById(R.id.btVoltar2);
         bt_sair = findViewById(R.id.btSair);
+        edt_nome = findViewById(R.id.edtNome3);
+        edt_email = findViewById(R.id.edtEmail3);
+        edt_faculdade = findViewById(R.id.edtNomeFaculdade2);
     }
 }

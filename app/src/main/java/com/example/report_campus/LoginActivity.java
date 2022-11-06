@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -93,14 +94,14 @@ public class LoginActivity extends AppCompatActivity {
             finish();
     }
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//
-//        FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
-//
-//        if (usuarioAtual != null){
-//            telaCarregamneto();
-//        }
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (usuarioAtual != null){
+            telaCarregamneto();
+        }
+    }
 }

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class ReportesActivity extends AppCompatActivity {
 
     private ImageButton bt_home, bt_lista, bt_config, bt_sair;
@@ -30,6 +32,15 @@ public class ReportesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ReportesActivity.this,ConfiguracoesActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        bt_sair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(ReportesActivity.this,LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
