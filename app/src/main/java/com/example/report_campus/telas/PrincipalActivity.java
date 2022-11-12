@@ -1,8 +1,9 @@
-package com.example.report_campus;
+package com.example.report_campus.telas;
 
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,11 +13,14 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.report_campus.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,8 +28,7 @@ import java.util.Map;
 public class PrincipalActivity extends AppCompatActivity {
 
     private String usuarioID;
-    int idReporte = 0;
-    private EditText edt_reporte;
+    private EditText edt_reporte, edt_titulo;
     private ImageButton bt_home, bt_lista, bt_config, bt_sair, bt_enviar;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -64,31 +67,46 @@ public class PrincipalActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                     String reporte = edt_reporte.getText().toString();
-                    idReporte++;
+                    String titulo = edt_titulo.getText().toString();
+                    if (!reporte.isEmpty() || !titulo.isEmpty()) {
+                        Map<String, Object> reportes = new HashMap<>();
+                        reportes.put("Titulo", titulo);
+                        reportes.put("Reporte", reporte);
 
-                    Map<String, Object> usuarios = new HashMap<>();
-                    usuarios.put(Integer.toString(idReporte), reporte);
+                        usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                        DocumentReference documentReference = db.collection("Usuário").document(usuarioID).collection("Reportes").document();
+                        documentReference.set(reportes).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d("db", "Sucesso ao salvar os reporte");
+                                Snackbar snackbar = Snackbar.make(view, "Reporte enviado com sucesso", Snackbar.LENGTH_SHORT);
+                                snackbar.setBackgroundTint(Color.WHITE);
+                                snackbar.setTextColor(Color.BLACK);
+                                snackbar.show();
 
-                    usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                edt_titulo.setText("");
+                                edt_reporte.setText("");
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d("db_error", "Erro ao salvar os dados" + e.toString());
+                            }
+                        });
+                    } else {
+                        Snackbar snackbar = Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_SHORT);
+                        snackbar.setBackgroundTint(Color.WHITE);
+                        snackbar.setTextColor(Color.BLACK);
+                        snackbar.show();
+                    }
 
-                    db.collection(usuarioID).add(usuarios).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                        }
-                    })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.w(TAG, "Error adding document", e);
-                                }
-                            });
         }
     });
     }
 
     private void iniciarComponentes(){
         edt_reporte = findViewById(R.id.edtReporte);
+        edt_titulo = findViewById(R.id.edtTitulo);
         bt_home = findViewById(R.id.btHome3);
         bt_lista = findViewById(R.id.btLista3);
         bt_config = findViewById(R.id.btConfig3);

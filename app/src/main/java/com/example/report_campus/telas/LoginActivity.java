@@ -1,4 +1,4 @@
-package com.example.report_campus;
+package com.example.report_campus.telas;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.report_campus.ConnectionDB;
+import com.example.report_campus.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;

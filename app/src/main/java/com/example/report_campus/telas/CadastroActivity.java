@@ -1,29 +1,18 @@
-package com.example.report_campus;
+package com.example.report_campus.telas;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
+import com.example.report_campus.ConnectionDB;
+import com.example.report_campus.R;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -63,7 +52,12 @@ public class CadastroActivity extends AppCompatActivity {
                     snackbar.show();
                 } else {
                     conexao.cadastrarUsuario(v, email, senha, nome, faculdade, usuarioID);
-                    telaLogin();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            telaLogin();
+                        }
+                    }, 3000);
                 }
             }
         });

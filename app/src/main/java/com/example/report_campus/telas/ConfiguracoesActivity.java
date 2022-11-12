@@ -1,4 +1,4 @@
-package com.example.report_campus;
+package com.example.report_campus.telas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.report_campus.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ConfiguracoesActivity extends AppCompatActivity {

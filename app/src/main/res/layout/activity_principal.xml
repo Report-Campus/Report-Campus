@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D5D6D6"
-    tools:context=".PrincipalActivity">
+    tools:context=".telas.PrincipalActivity">
 
     <ImageView
         android:id="@+id/imgFundo"
@@ -98,10 +98,10 @@
         android:layout_height="39dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76"
+        app:layout_constraintVertical_bias="0.816"
         app:srcCompat="@drawable/botao" />
 
     <androidx.appcompat.widget.AppCompatImageButton
@@ -111,10 +111,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76"
+        app:layout_constraintVertical_bias="0.816"
         app:srcCompat="@drawable/botao"
         tools:visibility="visible" />
 
@@ -144,8 +144,8 @@
         android:layout_height="179dp"
         android:background="@drawable/conteiner_grande"
         android:ems="10"
-        android:hint="Escreva o seu reporte"
         android:gravity="clip_horizontal"
+        android:hint="Escreva o seu reporte"
         android:inputType="textMultiLine"
         android:maxLength="342"
         android:maxLines="9"
@@ -159,6 +159,29 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.552" />
+        app:layout_constraintVertical_bias="0.648" />
+
+    <EditText
+        android:id="@+id/edtTitulo"
+        android:layout_width="314dp"
+        android:layout_height="38dp"
+        android:background="@drawable/container"
+        android:ems="10"
+        android:gravity="clip_horizontal"
+        android:hint="Escreva um titúlo"
+        android:lines="1"
+        android:maxLength="37"
+        android:maxLines="1"
+        android:minLines="1"
+        android:paddingLeft="6dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="6dp"
+        android:paddingRight="6dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

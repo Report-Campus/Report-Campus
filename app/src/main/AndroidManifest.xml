@@ -13,35 +13,35 @@
         android:theme="@style/Theme.ReportCampus"
         tools:targetApi="31">
         <activity
-            android:name=".PrincipalActivity"
+            android:name=".telas.PrincipalActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".EditCadastroActivity"
+            android:name=".telas.EditCadastroActivity"
             android:exported="true" />
         <activity
-            android:name=".SuporteActivity"
+            android:name=".telas.SuporteActivity"
             android:exported="true" />
         <activity
-            android:name=".ConfiguracoesActivity"
+            android:name=".telas.ConfiguracoesActivity"
             android:exported="true" />
         <activity
-            android:name=".ReportesActivity"
+            android:name=".telas.ReportesActivity"
             android:exported="true" />
         <activity
-            android:name=".SobreActivity"
+            android:name=".telas.SobreActivity"
             android:exported="true" />
         <activity
-            android:name=".CadastroActivity"
+            android:name=".telas.CadastroActivity"
             android:exported="true" />
         <activity
-            android:name=".CarregamentoActivity"
+            android:name=".telas.CarregamentoActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".telas.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

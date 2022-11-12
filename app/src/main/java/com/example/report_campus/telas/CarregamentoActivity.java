@@ -1,4 +1,4 @@
-package com.example.report_campus;
+package com.example.report_campus.telas;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.report_campus.R;
 
 public class CarregamentoActivity extends AppCompatActivity {
 
@@ -26,13 +28,13 @@ public class CarregamentoActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SobreActivity();
+                telaPrincipal();
             }
         }, 3000);
 
     }
 
-     private void SobreActivity(){
+     private void telaPrincipal(){
         Intent intent = new Intent(CarregamentoActivity.this,PrincipalActivity.class);
         startActivity(intent);
         finish();

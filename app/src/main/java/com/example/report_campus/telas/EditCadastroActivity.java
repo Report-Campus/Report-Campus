@@ -1,14 +1,18 @@
-package com.example.report_campus;
+package com.example.report_campus.telas;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.report_campus.ConnectionDB;
+import com.example.report_campus.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -19,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class EditCadastroActivity extends AppCompatActivity {
 
     private EditText edt_nome, edt_email, edt_faculdade;
-    private ImageButton bt_home, bt_lista, bt_voltar, bt_sair;
+    private ImageButton bt_home, bt_lista, bt_voltar, bt_sair, bt_salvar;
     private FirebaseFirestore conexao = FirebaseFirestore.getInstance();
     private String usuarioID;
 
@@ -63,6 +67,29 @@ public class EditCadastroActivity extends AppCompatActivity {
                 finish();
             }
         });
+        bt_salvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String nome = edt_nome.getText().toString();
+                String faculdade = edt_faculdade.getText().toString();
+
+                ConnectionDB conexao = new ConnectionDB();
+
+                if(nome.isEmpty() || faculdade.isEmpty()){
+                    Snackbar snackbar = Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                } else {
+                    conexao.salvarDadosUsuario(usuarioID, nome, faculdade);
+                    Snackbar snackbar = Snackbar.make(view, "Dados salvos com sucesso", Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                }
+            }
+        });
     }
 
     @Override
@@ -93,5 +120,6 @@ public class EditCadastroActivity extends AppCompatActivity {
         edt_nome = findViewById(R.id.edtNome3);
         edt_email = findViewById(R.id.edtEmail3);
         edt_faculdade = findViewById(R.id.edtNomeFaculdade2);
+        bt_salvar = findViewById(R.id.btSalvar);
     }
 }
