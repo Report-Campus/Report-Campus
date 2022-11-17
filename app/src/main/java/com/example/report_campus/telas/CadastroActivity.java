@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.report_campus.ConnectionDB;
+import com.example.report_campus.banco.ConnectionDB;
 import com.example.report_campus.R;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,14 +19,13 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText edt_Nome, edt_Email, edt_Senha, edt_NomeFaculdade, edt_ConfirmarSenha;
     private ImageButton bt_Cadastrar;
     private String[] mensagens = {"Preencha todos os campos", "As senhas não coincidem"};
-    String usuarioID;
+    private String usuarioID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-//        getActionBar().hide();
         iniciarComponente();
 
         bt_Cadastrar.setOnClickListener(new View.OnClickListener(){

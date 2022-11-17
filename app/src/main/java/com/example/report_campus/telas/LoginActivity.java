@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.report_campus.ConnectionDB;
 import com.example.report_campus.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,8 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edt_email, edt_senha;
-    private ImageButton imgb_login, imgb_cadastro;
-    private String[] mensagens = {"Login efetuado com sucesso"};
+    private ImageButton bt_login, bt_cadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
         iniarComponentes();
 
-        ConnectionDB conexao = new ConnectionDB();
-
-        imgb_cadastro.setOnClickListener(new View.OnClickListener() {
+        bt_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this,CadastroActivity.class);
@@ -42,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        imgb_login.setOnClickListener(new View.OnClickListener() {
+        bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = edt_email.getText().toString();
@@ -63,11 +59,11 @@ public class LoginActivity extends AppCompatActivity {
     private void iniarComponentes(){
         edt_email = findViewById(R.id.edtEmail2);
         edt_senha = findViewById(R.id.edtSenha2);
-        imgb_login = findViewById(R.id.imgbLogin);
-        imgb_cadastro = findViewById(R.id.imgbCadastro);
+        bt_login = findViewById(R.id.imgbLogin);
+        bt_cadastro = findViewById(R.id.imgbCadastro);
     }
 
-    public void autenticarUsuario(View v, String email, String senha){
+    private void autenticarUsuario(View view, String email, String senha){
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -81,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         erro = "Erro ao logar o usuário";
                     }
-                    Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();

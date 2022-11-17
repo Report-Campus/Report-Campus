@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ConfiguracoesActivity extends AppCompatActivity {
 
-    private ImageButton bt_home, bt_lista, bt_config, bt_sair, bt_editCadastro, bt_suporte, bt_sobreNos;
+    private ImageButton bt_home, bt_lista, bt_sair, bt_editCadastro, bt_suporte, bt_sobreNos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,6 @@ public class ConfiguracoesActivity extends AppCompatActivity {
     private void iniciarComponentes(){
         bt_home = findViewById(R.id.btHome1);
         bt_lista = findViewById(R.id.btLista1);
-        bt_config = findViewById(R.id.btConfig1);
         bt_sair = findViewById(R.id.btSair1);
         bt_editCadastro = findViewById(R.id.btEditCadastro);
         bt_suporte = findViewById(R.id.btSuporte);

@@ -1,7 +1,5 @@
 package com.example.report_campus.telas;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,7 +18,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,8 +26,8 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private String usuarioID;
     private EditText edt_reporte, edt_titulo;
-    private ImageButton bt_home, bt_lista, bt_config, bt_sair, bt_enviar;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ImageButton bt_lista, bt_config, bt_sair, bt_enviar;
+    private FirebaseFirestore conexao = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +71,7 @@ public class PrincipalActivity extends AppCompatActivity {
                         reportes.put("Reporte", reporte);
 
                         usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                        DocumentReference documentReference = db.collection("Usuário").document(usuarioID).collection("Reportes").document();
+                        DocumentReference documentReference = conexao.collection("Usuário").document(usuarioID).collection("Reportes").document();
                         documentReference.set(reportes).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
@@ -107,7 +104,6 @@ public class PrincipalActivity extends AppCompatActivity {
     private void iniciarComponentes(){
         edt_reporte = findViewById(R.id.edtReporte);
         edt_titulo = findViewById(R.id.edtTitulo);
-        bt_home = findViewById(R.id.btHome3);
         bt_lista = findViewById(R.id.btLista3);
         bt_config = findViewById(R.id.btConfig3);
         bt_sair = findViewById(R.id.btSair3);

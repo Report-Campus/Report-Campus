@@ -1,4 +1,4 @@
-package com.example.report_campus;
+package com.example.report_campus.banco;
 
 
 import android.graphics.Color;
@@ -26,7 +26,7 @@ import java.util.Map;
 public class ConnectionDB {
 
 
-    public void cadastrarUsuario(View v, String email, String senha, String nome, String faculdade, String usuarioID){
+    public void cadastrarUsuario(View view, String email, String senha, String nome, String faculdade, String usuarioID){
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -35,7 +35,7 @@ public class ConnectionDB {
 
                     salvarDadosUsuario(usuarioID, nome, faculdade);
 
-                    Snackbar snackbar = Snackbar.make(v, "Cadastro realizado com sucesso", Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(view, "Cadastro realizado com sucesso", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
@@ -53,7 +53,7 @@ public class ConnectionDB {
                         erro = "Erro ao cadastrar o usuário";
                     }
 
-                    Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.report_campus.ConnectionDB;
+import com.example.report_campus.banco.ConnectionDB;
 import com.example.report_campus.R;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;

@@ -23,9 +23,9 @@ import com.google.firebase.firestore.Query;
 
 public class ReportesActivity extends AppCompatActivity {
 
-    private ImageButton bt_home, bt_lista, bt_config, bt_sair;
-    private RecyclerView rv;
-    private FirebaseFirestore db;
+    private ImageButton bt_home, bt_config, bt_sair;
+    private RecyclerView lista;
+    private FirebaseFirestore conexao;
     private FirestoreRecyclerAdapter adapter;
     private String usuarioID;
 
@@ -35,10 +35,10 @@ public class ReportesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reportes);
 
         usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        db = FirebaseFirestore.getInstance();
+        conexao = FirebaseFirestore.getInstance();
         iniciarComponentes();
 
-        Query query = db.collection("Usuário").document(usuarioID).collection("Reportes");
+        Query query = conexao.collection("Usuário").document(usuarioID).collection("Reportes");
         FirestoreRecyclerOptions<Reporte> options = new FirestoreRecyclerOptions.Builder<Reporte>()
                 .setQuery(query, Reporte.class)
                         .build();
@@ -60,9 +60,9 @@ public class ReportesActivity extends AppCompatActivity {
             }
         };
 
-        rv.setHasFixedSize(true);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setAdapter(adapter);
+        lista.setHasFixedSize(true);
+        lista.setLayoutManager(new LinearLayoutManager(this));
+        lista.setAdapter(adapter);
 
         bt_home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,21 +93,9 @@ public class ReportesActivity extends AppCompatActivity {
 
     private void iniciarComponentes(){
         bt_home = findViewById(R.id.btHome4);
-        bt_lista = findViewById(R.id.btLista4);
         bt_config = findViewById(R.id.btConfig4);
         bt_sair = findViewById(R.id.btSair4);
-        rv = findViewById(R.id.listReporte);
-    }
-
-    private class ProductsViewHolder extends RecyclerView.ViewHolder{
-
-        TextView txt_Titulo, txt_Reporte;
-
-        public ProductsViewHolder(@NonNull View itemView) {
-            super(itemView);
-            txt_Titulo = itemView.findViewById(R.id.txtTitulo);
-            txt_Reporte = itemView.findViewById(R.id.txtReporte);
-        }
+        lista = findViewById(R.id.listReporte);
     }
 
     @Override
@@ -120,5 +108,16 @@ public class ReportesActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         adapter.startListening();
+    }
+
+    private class ProductsViewHolder extends RecyclerView.ViewHolder{
+
+        TextView txt_Titulo, txt_Reporte;
+
+        public ProductsViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txt_Titulo = itemView.findViewById(R.id.txtTitulo);
+            txt_Reporte = itemView.findViewById(R.id.txtReporte);
+        }
     }
 }
