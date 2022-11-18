@@ -26,7 +26,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private String usuarioID;
     private EditText edt_reporte, edt_titulo;
-    private ImageButton bt_lista, bt_config, bt_sair, bt_enviar;
+    private ImageButton bt_lista, bt_config, bt_sair, bt_enviar, bt_apagar;
     private FirebaseFirestore conexao = FirebaseFirestore.getInstance();
 
     @Override
@@ -99,6 +99,14 @@ public class PrincipalActivity extends AppCompatActivity {
 
         }
     });
+
+        bt_apagar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                edt_reporte.setText("");
+                edt_titulo.setText("");
+            }
+        });
     }
 
     private void iniciarComponentes(){
@@ -108,6 +116,7 @@ public class PrincipalActivity extends AppCompatActivity {
         bt_config = findViewById(R.id.btConfig3);
         bt_sair = findViewById(R.id.btSair3);
         bt_enviar = findViewById(R.id.bt_enviar);
+        bt_apagar = findViewById(R.id.btApagar);
     }
 
 

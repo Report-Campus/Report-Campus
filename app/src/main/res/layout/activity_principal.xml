@@ -105,7 +105,7 @@
         app:srcCompat="@drawable/botao" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/cancel_button"
+        android:id="@+id/btApagar"
         android:layout_width="110dp"
         android:layout_height="39dp"
         android:visibility="visible"
@@ -122,11 +122,11 @@
         android:id="@+id/imageView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/cancel_button"
-        app:layout_constraintEnd_toEndOf="@+id/cancel_button"
-        app:layout_constraintStart_toStartOf="@+id/cancel_button"
-        app:layout_constraintTop_toTopOf="@+id/cancel_button"
-        app:srcCompat="@drawable/cancelar" />
+        app:layout_constraintBottom_toBottomOf="@+id/btApagar"
+        app:layout_constraintEnd_toEndOf="@+id/btApagar"
+        app:layout_constraintStart_toStartOf="@+id/btApagar"
+        app:layout_constraintTop_toTopOf="@+id/btApagar"
+        app:srcCompat="@drawable/limpar" />
 
     <ImageView
         android:id="@+id/imageView17"
