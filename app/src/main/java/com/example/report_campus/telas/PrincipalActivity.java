@@ -2,6 +2,7 @@ package com.example.report_campus.telas;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -67,8 +68,8 @@ public class PrincipalActivity extends AppCompatActivity {
                     String titulo = edt_titulo.getText().toString();
                     if (!reporte.isEmpty() || !titulo.isEmpty()) {
                         Map<String, Object> reportes = new HashMap<>();
-                        reportes.put("Titulo", titulo);
-                        reportes.put("Reporte", reporte);
+                        reportes.put("titulo", titulo);
+                        reportes.put("reporte", reporte);
 
                         usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                         DocumentReference documentReference = conexao.collection("Usuário").document(usuarioID).collection("Reportes").document();
@@ -80,6 +81,8 @@ public class PrincipalActivity extends AppCompatActivity {
                                 snackbar.setBackgroundTint(Color.WHITE);
                                 snackbar.setTextColor(Color.BLACK);
                                 snackbar.show();
+
+                                enviarEmail(edt_titulo.getText().toString(),edt_reporte.getText().toString());
 
                                 edt_titulo.setText("");
                                 edt_reporte.setText("");
@@ -119,5 +122,13 @@ public class PrincipalActivity extends AppCompatActivity {
         bt_apagar = findViewById(R.id.btApagar);
     }
 
+    private void enviarEmail(String titulo, String texto){
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"pedrohp36@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, titulo);
+        intent.putExtra(Intent.EXTRA_TEXT, texto);
+        startActivity(intent);
+    }
 
 }

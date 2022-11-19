@@ -19,11 +19,23 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fundo" />
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="248dp"
+        android:layout_height="239dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        app:srcCompat="@drawable/logo" />
+
     <EditText
         android:id="@+id/edtNomeFaculdade"
         android:layout_width="270dp"
         android:layout_height="23dp"
-        android:layout_marginBottom="276dp"
         android:background="@drawable/container"
         android:backgroundTint="@color/white"
         android:cursorVisible="true"
@@ -45,8 +57,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo3"
-        app:layout_constraintVertical_bias="0.61"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo"
+        app:layout_constraintVertical_bias="0.611"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
 
@@ -54,7 +66,6 @@
         android:id="@+id/edtNome"
         android:layout_width="270dp"
         android:layout_height="23dp"
-        android:layout_marginBottom="388dp"
         android:background="@drawable/container"
         android:backgroundTint="@color/white"
         android:cursorVisible="true"
@@ -76,8 +87,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo3"
-        app:layout_constraintVertical_bias="0.61"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo"
+        app:layout_constraintVertical_bias="0.44"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
 
@@ -85,7 +96,6 @@
         android:id="@+id/edtEmail"
         android:layout_width="270dp"
         android:layout_height="23dp"
-        android:layout_marginBottom="332dp"
         android:background="@drawable/container"
         android:backgroundTint="@color/white"
         android:cursorVisible="true"
@@ -107,8 +117,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo3"
-        app:layout_constraintVertical_bias="0.61"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo"
+        app:layout_constraintVertical_bias="0.528"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
 
@@ -116,7 +126,6 @@
         android:id="@+id/edtSenha"
         android:layout_width="270dp"
         android:layout_height="23dp"
-        android:layout_marginBottom="224dp"
         android:background="@drawable/container"
         android:backgroundTint="@color/white"
         android:cursorVisible="true"
@@ -139,8 +148,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo3"
-        app:layout_constraintVertical_bias="0.61"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo"
+        app:layout_constraintVertical_bias="0.692"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
 
@@ -148,7 +157,6 @@
         android:id="@+id/edtConfirmarSenha"
         android:layout_width="270dp"
         android:layout_height="23dp"
-        android:layout_marginBottom="168dp"
         android:background="@drawable/container"
         android:backgroundTint="@color/white"
         android:cursorVisible="true"
@@ -171,24 +179,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo3"
-        app:layout_constraintVertical_bias="0.61"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo"
+        app:layout_constraintVertical_bias="0.785"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="248dp"
-        android:layout_height="239dp"
-        android:layout_marginTop="28dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageCadastro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btCadastrar"
@@ -210,10 +204,10 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.386"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo"
+        app:layout_constraintVertical_bias="0.354"
         app:srcCompat="@drawable/cadastro"
         tools:ignore="MissingConstraints" />
 
@@ -223,7 +217,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/edtNome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageFundo"
         app:layout_constraintVertical_bias="0.964"
@@ -237,7 +231,7 @@
         app:layout_constraintBottom_toTopOf="@+id/edtEmail"
         app:layout_constraintEnd_toEndOf="@+id/imageFundo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintTop_toBottomOf="@+id/edtNome"
         app:layout_constraintVertical_bias="0.619"
         app:srcCompat="@drawable/email"
@@ -262,7 +256,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/edtSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="@+id/imageFundo"
         app:layout_constraintTop_toBottomOf="@+id/edtNomeFaculdade"
         app:layout_constraintVertical_bias="0.619"

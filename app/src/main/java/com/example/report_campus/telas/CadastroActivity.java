@@ -17,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class CadastroActivity extends AppCompatActivity {
 
     private EditText edt_Nome, edt_Email, edt_Senha, edt_NomeFaculdade, edt_ConfirmarSenha;
-    private ImageButton bt_Cadastrar;
+    private ImageButton bt_Cadastrar, bt_voltar;
     private String[] mensagens = {"Preencha todos os campos", "As senhas não coincidem"};
     private String usuarioID;
 
@@ -60,6 +60,12 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
+        bt_voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                telaLogin();
+            }
+        });
     }
 
     private void iniciarComponente(){
@@ -69,6 +75,7 @@ public class CadastroActivity extends AppCompatActivity {
         edt_ConfirmarSenha = findViewById(R.id.edtConfirmarSenha);
         edt_NomeFaculdade = findViewById(R.id.edtNomeFaculdade);
         bt_Cadastrar = findViewById(R.id.btCadastrar);
+        bt_voltar = findViewById(R.id.btVoltar);
     }
 
     private void telaLogin(){
