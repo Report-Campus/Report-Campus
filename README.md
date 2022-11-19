@@ -41,7 +41,7 @@ Mencione as ferramentas que você usou para criar seu projeto
 Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 * **Pedro Henrique Pereira** - *Desenvolvimento* - [Github](https://github.com/pedrohp28) | [Linkedin](https://www.linkedin.com/in/pedro-h-pereira-dev)
-* **Maria Eduarda Albuquerque** - *Documentação e Desenvolvimento * - [Github](https://github.com/MariaEduardaCox) | [Linkedin](https://www.linkedin.com/in/maria-eduarda-reis-9a7067221)
+* **Maria Eduarda Albuquerque** - *Documentação e Desenvolvimento* - [Github](https://github.com/MariaEduardaCox) | [Linkedin](https://www.linkedin.com/in/maria-eduarda-reis-9a7067221)
 * **Fernanda Zelizi** - *Design* - [Github](https://github.com/fernandazelizi) | [Linkedin](https://www.linkedin.com/in/fernanda-zelizi)
 * **Lucas Munhoz** - *Desenvolvimento e Documentação* - [Github](https://github.com/munhoz2k) | [Linkedin](https://www.linkedin.com/in/lucas-munhoz-b946131a5)
 * **Pedro Henrique Pereira** - *Desenvolvimento* - [Github]() | [Linkedin]()
