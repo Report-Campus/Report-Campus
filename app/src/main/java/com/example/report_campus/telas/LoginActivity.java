@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         bt_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,CadastroActivity.class);
+                Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = edt_email.getText().toString();
                 String senha = edt_senha.getText().toString();
 
-                if (email.isEmpty() || senha.isEmpty()){
+                if (email.isEmpty() || senha.isEmpty()) {
                     Snackbar snackbar = Snackbar.make(v, "Preencha todos os campos", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
@@ -56,14 +56,14 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void iniarComponentes(){
+    private void iniarComponentes() {
         edt_email = findViewById(R.id.edtEmail2);
         edt_senha = findViewById(R.id.edtSenha2);
         bt_login = findViewById(R.id.imgbLogin);
         bt_cadastro = findViewById(R.id.imgbCadastro);
     }
 
-    private void autenticarUsuario(View view, String email, String senha){
+    private void autenticarUsuario(View view, String email, String senha) {
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -86,11 +86,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void telaCarregamneto(){
-            Intent intent = new Intent(LoginActivity.this, CarregamentoActivity.class);
-            startActivity(intent);
-            finish();
+    private void telaCarregamneto() {
+        Intent intent = new Intent(LoginActivity.this, CarregamentoActivity.class);
+        startActivity(intent);
+        finish();
     }
+
 
     @Override
     protected void onStart() {
@@ -98,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
 
         FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (usuarioAtual != null){
+        if (usuarioAtual != null) {
             telaCarregamneto();
         }
     }

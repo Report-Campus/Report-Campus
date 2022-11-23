@@ -63,7 +63,7 @@ public class CadastroActivity extends AppCompatActivity {
         bt_voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                telaLogin();
+                finish();
             }
         });
     }
@@ -79,8 +79,6 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void telaLogin(){
-        Intent intent = new Intent(CadastroActivity.this,LoginActivity.class);
-        startActivity(intent);
         finish();
     }
 
